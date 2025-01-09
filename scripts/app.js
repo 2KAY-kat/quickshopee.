@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const products = [
-        { id: 1, name: 'Product 1', image: 'assets/images', price: '$10' },
-        { id: 2, name: 'Product 2', image: 'assets/images/product2.jpg', price: '$20' },
-        { id: 3, name: 'Product 3', image: 'assets/images/product3.jpg', price: '$30' },
+        { id: 1, name: 'Product 1', image: 'assets/images/19-346x310.webp', price: '$10' },
+        { id: 2, name: 'Product 2', image: 'assets/images/checkers515Wx515H.png', price: '$20' },
+        { id: 3, name: 'Product 3', image: 'assets/images/biscuitssnacks-1.jpg', price: '$30' },
     ];
 
     const productsContainer = document.getElementById('products');
