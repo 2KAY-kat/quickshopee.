@@ -1,12 +1,55 @@
-/* Add styles for the featured product */
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
 #featured-product {
-    border: 2px solid #f39c12;
     padding: 1rem;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: left;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #featured-product img {
@@ -30,52 +73,47 @@
     border-radius: 5px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 2rem;
-}
-
 #products {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 
 .product {
-    border: 1px solid #ccc;
     padding: 1rem;
     width: calc(33.333% - 2rem);
     box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .product img {
     max-width: 100%;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    #featured-product {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #featured-product img {
+        max-width: 100%;
+    }
+
+    #featured-product .product-details {
+        max-width: 100%;
+    }
+
+    .product {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: calc(100% - 2rem);
+    }
 }

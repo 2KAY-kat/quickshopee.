@@ -1,11 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const products = [
-        { id: 1, name: 'Product 1', image: 'assets/images/19-346x310.webp', price: '$10' },
-        { id: 2, name: 'Product 2', image: 'assets/images/checkers515Wx515H.png', price: '$20' },
-        { id: 3, name: 'Product 3', image: 'assets/images/biscuitssnacks-1.jpg', price: '$30' },
-    ];
+import { products } from './data.js';
 
-    
+document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products');
     const featuredProductContainer = document.getElementById('featured-product');
 
