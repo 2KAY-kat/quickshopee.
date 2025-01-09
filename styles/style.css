@@ -1,3 +1,35 @@
+/* Add styles for the featured product */
+#featured-product {
+    border: 2px solid #f39c12;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+#featured-product img {
+    max-width: 40%;
+    height: auto;
+}
+
+#featured-product .product-details {
+    max-width: 55%;
+}
+
+#featured-product .description {
+    margin: 1rem 0;
+}
+
+#featured-product .cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
