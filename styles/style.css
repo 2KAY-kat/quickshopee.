@@ -1,119 +1,194 @@
+@import url(all.css);
 /* General styles */
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
-    background-color: #333;
+    background-color: #293891;
     color: white;
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    box-sizing: border-box;
-}
-
-#featured-product {
-    padding: 1rem;
-    margin-bottom: 2rem;
     display: flex;
+    padding: 0.5rem 1rem;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
-    text-align: left;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-#featured-product img {
-    max-width: 40%;
-    height: auto;
+header .logo {
+    display: flex;
+    align-items: center;
 }
 
-#featured-product .product-details {
-    max-width: 55%;
-}
-
-#featured-product .description {
-    margin: 1rem 0;
-}
-
-#featured-product .cta-button {
-    background-color: #f39c12;
-    color: white;
+header .logo h1 {
     padding: 0.5rem 1rem;
-    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    header .logo h1 {
+        display: none;
+    }
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+header input[type="search"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+header button {
+    padding: 0.5rem 1rem;
+    background-color:rgb(255, 255, 255);
+    color: #293891;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: #293891;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 35px; /* Adjust based on header height */
+    z-index: 999;
+}
+
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px;
     border-radius: 5px;
 }
 
-#products {
+.navbar .nav-links {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
 }
 
-.product {
-    padding: 1rem;
-    width: calc(33.333% - 2rem);
-    box-sizing: border-box;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
-    #featured-product {
+    .navbar .nav-links {
+        display: none;
         flex-direction: column;
-        text-align: center;
+        width: 200px;
+        background-color: #293891;
+        position: fixed;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        padding-top: 35px; /* Adjust based on header height */
+        transition: left 0.3s ease;
     }
 
-    #featured-product img {
-        max-width: 100%;
+    .navbar .nav-links.active {
+        left: 0;
+        display: flex;
     }
 
-    #featured-product .product-details {
-        max-width: 100%;
-    }
-
-    .product {
-        width: calc(50% - 2rem);
+    .navbar .hamburger {
+        display: flex;
     }
 }
 
-@media (max-width: 480px) {
-    .product {
-        width: calc(100% - 2rem);
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/images/books-20240711-WA0003.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.banner-content h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.banner-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #293891;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .banner-content h2 {
+        font-size: 2rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .banner-content .btn {
+        font-size: 1rem;
     }
 }

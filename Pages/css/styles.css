@@ -1,0 +1,143 @@
+/* @import url(../../css/style.css); */
+
+@import url(../../fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.css);
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #363636;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-button {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .hero-button {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      height: 50vh;
+    }
+  
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero p {
+      font-size: 0.875rem;
+    }
+  
+    .hero-button {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  
+  .catalogue-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #d3d3d3; /* Light grey background */
+  }
+  
+  .catalogue-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .catalogue-link:hover {
+    color: #0056b3;
+  }
+  
+  .cart-icon {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    color: #4a4a4a; /* Dark grey color */
+  }
+  
+  .arrow {
+    margin-left: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .catalogue-link {
+      font-size: 1.25rem;
+    }
+  
+    .cart-icon, .arrow {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .catalogue-link {
+      font-size: 1rem;
+    }
+  
+    .cart-icon, .arrow {
+      font-size: 1.5rem;
+    }
+  }
+  

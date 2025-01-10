@@ -88,3 +88,21 @@ export const products = [
         name: 'Eggs | 1 only',
         description: 'lorem some description text here The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.'
     }];
+
+    export const header = [
+        {
+        value: 'Search'
+    }
+];
+
+export const logo =[
+    {
+        heading: 'QuickShopee.'
+    }
+]
+
+export const banner = [{
+    image: '../assets/images/books-20240711-WA0003.jpg',
+    heading1: 'Todays Exclusive On Sell',
+    p_description: 'Get todays most exclusive product on promotion and get a 50% discount after Purchase and Free Delivery!'
+}];
