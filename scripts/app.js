@@ -1,8 +1,9 @@
-import { header, logo, banner } from './data.js';
+import { header, logo, banner, about } from './data.js';
 
 let logoHTML ='';
 let headerHTML = '';
 let bannerHTML = '';
+let aboutHTML = '';
 
 logo.forEach((logo) => {
     logoHTML += `
@@ -45,6 +46,28 @@ banner.forEach((banner) => {
 })
 
 document.querySelector('.js-banner').innerHTML = bannerHTML;
+
+about.forEach((about) => {
+    aboutHTML += `
+    
+    <div class="about-image">
+                <img src="${about.image}" alt="About QuickShopee">
+            </div>
+            <div class="about-description">
+                <h2>${about.about_h2}</h2>
+                <p>${about.p1_description}</p>
+                <p>${about.p2_description}</p>
+            </div>   
+    `;
+})
+
+document.querySelector('.about-section').innerHTML = aboutHTML;
+
+
+
+
+
+
 
 
 

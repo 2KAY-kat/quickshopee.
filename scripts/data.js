@@ -106,3 +106,11 @@ export const banner = [{
     heading1: 'Todays Exclusive On Sell',
     p_description: 'Get todays most exclusive product on promotion and get a 50% discount after Purchase and Free Delivery!'
 }];
+
+
+export const about = [{
+    image: './assets/images/Assets/man-working-animation-studio.jpg',
+    about_h2: 'About QuickShopee',
+    p1_description: 'QuickShopee is an e-commerce site dedicated to providing you with the best shopping experience. Our mission is to offer a wide range of products at competitive prices, ensuring customer satisfaction with every purchase.',
+    p2_description: 'We believe in the power of convenience and strive to make online shopping as easy and enjoyable as possible. Thank you for choosing QuickShopee!'
+}];
