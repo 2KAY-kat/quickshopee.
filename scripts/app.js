@@ -48,13 +48,23 @@ document.querySelector('.js-banner').innerHTML = bannerHTML;
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links li a');
 
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+    });
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+            navLinks.classList.remove('active');
+        }
     });
 });
