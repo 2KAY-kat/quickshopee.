@@ -97,13 +97,13 @@ export const products = [
 
 export const logo =[
     {
-        heading: 'QuickShopee<b class="b-color">.</b>'
+        heading: 'QuickShope<b class="b-color">e.</b>'
     }
 ]
 
 export const banner = [{
     image: '../assets/images/books-20240711-WA0003.jpg',
-    heading1: 'Todays Exclusive On Sell',
+    heading1: "Today's Exclusive On Sell",
     p_description: 'Get todays most exclusive product on promotion and get a 50% discount after Purchase and Free Delivery!'
 }];
 

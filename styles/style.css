@@ -38,7 +38,7 @@ header .logo h1 {
 }
 
  .b-color {
-    color: #0056b3;
+    color: #007bff;
  }
 
 header .search {
@@ -94,6 +94,12 @@ header button {
     cursor: pointer;
 }
 
+header button:hover {
+    background: #0056b3;
+    color: #f4f4f4;
+    transition: background-color 0.33s ease-in-out;
+}
+
 .navbar {
     background-color: #293891;
     width: 100%;
@@ -130,7 +136,7 @@ header button {
         top: 0;
         left: -200px;
         height: 100%;
-        padding-top: 35px; /* Adjust based on header height */
+        padding-top: 35px; 
         transition: left 0.3s ease;
     }
 
@@ -168,9 +174,10 @@ header button {
     color: #fff;
 }
 
-.banner-content h2 {
+.banner-content h1 {
     font-size: 3rem;
     margin: 0;
+    color: #293891;
 }
 
 .banner-content p {
@@ -181,12 +188,18 @@ header button {
 .banner-content .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #293891;
-    color: #fff;
+    background-color: #f4f4f4;
+    color: #293891;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
     margin-top: 20px;
+}
+
+.banner-content .btn:hover {
+    background: #0056b3;
+    color: #f4f4f4;
+    transition: background-color 0.33s ease-in-out;
 }
 
 @media (max-width: 600px) {
@@ -248,3 +261,25 @@ header button {
         padding: 0.5rem;
     }
 }
+
+
+#back-to-top {
+    background-color: #293891;
+    color: #f4f4f4;
+    border-radius: 50%;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 24px;
+    content: '\f0aa';
+    padding: 10px;
+    display: none;
+    position: fixed;
+    bottom: 55px;
+    right: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  #back-to-top:hover {
+    background-color: #0056b3;
+    color: #293891;
+  }
