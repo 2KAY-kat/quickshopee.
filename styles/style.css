@@ -1,5 +1,22 @@
 @import url(all.css);
 
+:root {
+    --primary-color: #293891;
+    --secondary-color: #007bff;
+    --background-color: #f4f4f4;
+    --text-color: #fff;
+    --button-bg-color: #f4f4f4;
+    --button-text-color: #293891;
+    --button-hover-bg-color: #0056b3;
+    --button-hover-text-color: #f4f4f4;
+    --header-height: 35px;
+    --banner-height: 100vh;
+    --banner-overlay-color: rgba(0, 47, 109, 0.384);
+    --card-bg-color: #e0e0e0; /* Changed from white to a light gray */
+    --card-text-color: #293891;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-duration: 0.33s;
+}
 
 * {
     box-sizing: border-box;
@@ -8,15 +25,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 header {
-    background-color: #293891;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     display: flex;
     padding: 0.5rem 1rem;
     width: 100%;
@@ -38,7 +55,7 @@ header .logo h1 {
 }
 
  .b-color {
-    color: #007bff;
+    color: var(--secondary-color);
  }
 
 header .search {
@@ -55,7 +72,7 @@ header .hamburger {
 header .hamburger span {
     height: 3px;
     width: 25px;
-    background: white;
+    background: var(--text-color);
     margin: 4px;
     border-radius: 5px;
 }
@@ -80,35 +97,35 @@ h1 {
 header input[type="search"] {
     padding: 0.5rem;
     border: none;
-    outline-color: #293891;
+    outline-color: var(--primary-color);
     border-radius: 5px;
     margin-right: 10px;
 }
 
 header button {
     padding: 0.5rem 1rem;
-    background-color:rgb(255, 255, 255);
-    color: #293891;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 header button:hover {
-    background: #0056b3;
-    color: #f4f4f4;
-    transition: background-color 0.33s ease-in-out;
+    background: var(--button-hover-bg-color);
+    color: var(--button-hover-text-color);
+    transition: background-color var(--transition-duration) ease-in-out;
 }
 
 .navbar {
-    background-color: #293891;
+    background-color: var(--primary-color);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
     position: sticky;
-    top: 35px; 
+    top: var(--header-height); 
     z-index: 999;
 }
 .navbar .nav-links {
@@ -118,7 +135,7 @@ header button:hover {
 }
 
 .navbar .nav-links li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
 }
@@ -131,12 +148,12 @@ header button:hover {
         display: none;
         flex-direction: column;
         width: 200px;
-        background-color: #293891;
+        background-color: var(--primary-color);
         position: fixed;
         top: 0;
         left: -200px;
         height: 100%;
-        padding-top: 35px; 
+        padding-top: var(--header-height); 
         transition: left 0.3s ease;
     }
 
@@ -149,7 +166,7 @@ header button:hover {
 .banner {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: var(--banner-height);
     background: url('../assets/images/books-20240711-WA0003.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -164,20 +181,20 @@ header button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 47, 109, 0.384); 
+    background-color: var(--banner-overlay-color); 
     z-index: 1;
 }
 
 .banner-content {
     position: relative;
     z-index: 2;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .banner-content h1 {
     font-size: 3rem;
     margin: 0;
-    color: #293891;
+    color: var(--primary-color);
 }
 
 .banner-content p {
@@ -188,8 +205,8 @@ header button:hover {
 .banner-content .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f4f4f4;
-    color: #293891;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
@@ -197,9 +214,9 @@ header button:hover {
 }
 
 .banner-content .btn:hover {
-    background: #0056b3;
-    color: #f4f4f4;
-    transition: background-color 0.33s ease-in-out;
+    background: var(--button-hover-bg-color);
+    color: var(--button-hover-text-color);
+    transition: background-color var(--transition-duration) ease-in-out;
 }
 
 @media (max-width: 600px) {
@@ -222,7 +239,7 @@ header button:hover {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
 }
 
 .about-image {
@@ -264,8 +281,8 @@ header button:hover {
 
 
 #back-to-top {
-    background-color: #293891;
-    color: #f4f4f4;
+    background-color: var(--primary-color);
+    color: var(--button-hover-text-color);
     border-radius: 50%;
     font-family: 'Font Awesome 5 Free';
     font-size: 24px;
@@ -276,10 +293,102 @@ header button:hover {
     bottom: 55px;
     right: 20px;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-duration) ease;
   }
   
   #back-to-top:hover {
-    background-color: #0056b3;
-    color: #293891;
+    background-color: var(--button-hover-bg-color);
+    color: var(--primary-color);
   }
+
+  
+  .about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+
+.about-image {
+    flex: 1;
+    padding: 1rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-description {
+    flex: 1;
+    padding: 1rem;
+}
+
+.about-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-description p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section {
+    background: none; /* Remove the background image */
+    padding: 2rem;
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 50vh;
+    position: relative; /* Add this line to position the map */
+}
+
+.contact-card {
+    background: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    color: var(--card-text-color);
+    z-index: 2; /* Ensure the card is above the map */
+}
+
+.contact-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure the map is behind the card */
+}
+
+.contact-card h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+}
+
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image, .about-description {
+        padding: 0.5rem;
+    }
+}

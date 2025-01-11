@@ -1,9 +1,10 @@
-import { header, logo, banner, about } from './data.js';
+import { header, logo, banner, about, contact } from './data.js';
 
 let logoHTML ='';
 let headerHTML = '';
 let bannerHTML = '';
 let aboutHTML = '';
+let contactHTML = '';
 
 logo.forEach((logo) => {
     logoHTML += `
@@ -22,7 +23,6 @@ document.querySelector('.logo').innerHTML = logoHTML;
 
 header.forEach((header) => {
     headerHTML += `
-
         <div class="search-container">
             <input type="search" placeholder="Search..." id="search">
             <button type="submit" id="search-button">${header.value}</button>
@@ -34,22 +34,18 @@ document.querySelector('.search').innerHTML = headerHTML;
 
 banner.forEach((banner) => {
     bannerHTML += `
-
   <div class="banner-content">
     <h1>${banner.heading1}</h1>
     <p>${banner.p_description}</p>
     <a href="today-exclusive.html" class="btn">Shop Now <i class="fa fa-shopping-cart"></i> &rarr;</a>
   </div>
-
     `;
-    
 })
 
 document.querySelector('.js-banner').innerHTML = bannerHTML;
 
 about.forEach((about) => {
     aboutHTML += `
-    
     <div class="about-image">
                 <img src="${about.image}" alt="About QuickShopee">
             </div>
@@ -63,13 +59,29 @@ about.forEach((about) => {
 
 document.querySelector('.about-section').innerHTML = aboutHTML;
 
+contact.forEach((contact) => {
+    contactHTML += `
+        <div class="contact-card">
+            <h2>Contact Us</h2>
+            <div class="contact-details">
+                <p><strong>Address:</strong> ${contact.address}</p>
+                <p><strong>Phone:</strong> ${contact.phone}</p>
+                <p><strong>Email:</strong> ${contact.email}</p>
+            </div>
+        </div>
+        <iframe
+            class="contact-map"
+            src="${contact.mapSrc}"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+        ></iframe>
+    `;
+});
 
-
-
-
-
-
-
+document.querySelector('.contact-section').innerHTML = contactHTML;
 
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
@@ -91,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 
 const backToTop = document.getElementById('back-to-top');
 
