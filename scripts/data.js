@@ -97,7 +97,7 @@ export const products = [
 
 export const logo =[
     {
-        heading: 'QuickShopee.'
+        heading: 'QuickShopee<b class="b-color">.</b>'
     }
 ]
 

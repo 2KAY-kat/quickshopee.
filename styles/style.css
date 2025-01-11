@@ -37,6 +37,9 @@ header .logo h1 {
     font-size: 1.5rem;
 }
 
+ .b-color {
+    color: #0056b3;
+ }
 
 header .search {
     margin-left: 10px;
