@@ -1,10 +1,12 @@
-import { header, logo, banner, about, contact } from './data.js';
+import { header, logo, banner, about, contact, products, exclusiveProducts } from './data.js';
 
-let logoHTML ='';
+let logoHTML = '';
 let headerHTML = '';
 let bannerHTML = '';
 let aboutHTML = '';
 let contactHTML = '';
+let productsHTML = '';
+let exclusiveProductsHTML = '';
 
 logo.forEach((logo) => {
     logoHTML += `
@@ -17,7 +19,7 @@ logo.forEach((logo) => {
 </svg>
     <h1>${logo.heading}</h1>
     `;
-})
+});
 
 document.querySelector('.logo').innerHTML = logoHTML;
 
@@ -28,7 +30,7 @@ header.forEach((header) => {
             <button type="submit" id="search-button">${header.value}</button>
         </div>
     `;
-})
+});
 
 document.querySelector('.search').innerHTML = headerHTML;
 
@@ -37,10 +39,10 @@ banner.forEach((banner) => {
   <div class="banner-content">
     <h1>${banner.heading1}</h1>
     <p>${banner.p_description}</p>
-    <a href="today-exclusive.html" class="btn">Shop Now <i class="fa fa-shopping-cart"></i> &rarr;</a>
+    <a href="#featured-product" class="btn">Shop Now <i class="fa fa-shopping-cart"></i> &rarr;</a>
   </div>
     `;
-})
+});
 
 document.querySelector('.js-banner').innerHTML = bannerHTML;
 
@@ -55,7 +57,7 @@ about.forEach((about) => {
                 <p>${about.p2_description}</p>
             </div>   
     `;
-})
+});
 
 document.querySelector('.about-section').innerHTML = aboutHTML;
 
@@ -83,6 +85,84 @@ contact.forEach((contact) => {
 
 document.querySelector('.contact-section').innerHTML = contactHTML;
 
+productsHTML += '<div class="products-container">';
+products.forEach((product) => {
+    productsHTML += `
+        <div class="product-card" data-product-id="${product.id}">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="price">${product.price}</p>
+            <div class="product-actions">
+                <button class="bookmark-btn"><i class="fas fa-bookmark"></i></button>
+                <button class="like-btn"><i class="fas fa-heart"></i></button>
+                <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+        </div>
+    `;
+});
+productsHTML += '</div>';
+
+exclusiveProductsHTML += '<div class="products-container">';
+exclusiveProducts.forEach((product) => {
+    exclusiveProductsHTML += `
+        <div class="product-card" data-product-id="${product.id}">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="price">${product.price}</p>
+            <div class="product-actions">
+                <button class="bookmark-btn"><i class="fas fa-bookmark"></i></button>
+                <button class="like-btn"><i class="fas fa-heart"></i></button>
+                <button class="details-btn" data-product-id="${product.id}"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+        </div>
+    `;
+});
+exclusiveProductsHTML += '</div>';
+
+document.querySelector('#products').innerHTML = productsHTML;
+document.querySelector('#featured-product').innerHTML = exclusiveProductsHTML;
+
+function viewDetails(productId) {
+    window.location.href = `product-details.html?productId=${productId}`;
+}
+
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerText = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+function saveToLocalStorage(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+        console.error('Error saving to localStorage:', error);
+    }
+}
+
+function getFromLocalStorage(key) {
+    try {
+        return JSON.parse(localStorage.getItem(key)) || [];
+    } catch (error) {
+        console.error('Error reading from localStorage:', error);
+        return [];
+    }
+}
+
+function updateButtonState(button, stateClass, message, type) {
+    if (button.classList.contains(stateClass)) {
+        button.classList.remove(stateClass);
+        showNotification(`${message} removed!`, 'warning');
+    } else {
+        button.classList.add(stateClass);
+        showNotification(`${message} added!`, 'success');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -102,6 +182,59 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
         }
     });
+
+    const bookmarks = getFromLocalStorage('bookmarks');
+    const likes = getFromLocalStorage('likes');
+
+    document.querySelectorAll('.bookmark-btn').forEach(button => {
+        const productId = button.closest('.product-card').dataset.productId;
+        if (bookmarks.includes(productId)) {
+            button.classList.add('bookmarked');
+        }
+        button.addEventListener('click', () => {
+            updateButtonState(button, 'bookmarked', 'Bookmark', 'success');
+            if (button.classList.contains('bookmarked')) {
+                bookmarks.push(productId);
+            } else {
+                const index = bookmarks.indexOf(productId);
+                if (index > -1) {
+                    bookmarks.splice(index, 1);
+                }
+            }
+            saveToLocalStorage('bookmarks', bookmarks);
+        });
+    });
+
+    document.querySelectorAll('.like-btn').forEach(button => {
+        const productId = button.closest('.product-card').dataset.productId;
+        if (likes.includes(productId)) {
+            button.classList.add('liked');
+        }
+        button.addEventListener('click', () => {
+            updateButtonState(button, 'liked', 'Like', 'success');
+            if (button.classList.contains('liked')) {
+                likes.push(productId);
+            } else {
+                const index = likes.indexOf(productId);
+                if (index > -1) {
+                    likes.splice(index, 1);
+                }
+            }
+            saveToLocalStorage('likes', likes);
+        });
+    });
+
+    document.querySelectorAll('.details-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.product-card');
+            const productId = card.dataset.productId;
+            if (productId) {
+                viewDetails(productId);
+            } else {
+                console.error('Product ID not found');
+            }
+        });
+    });
 });
 
 const backToTop = document.getElementById('back-to-top');
@@ -110,7 +243,7 @@ window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
         backToTop.style.display = 'block';
     } else {
-        backToTop.style.display = 'none'
+        backToTop.style.display = 'none';
     }
 });
 
