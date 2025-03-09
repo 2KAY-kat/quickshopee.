@@ -7,7 +7,46 @@ export const products = [
         description: 'A nice Classic Jumper for men black. Suitable for all occassions and a great mix of clothes mix.',
         dataProductId: '1'
     },
-    
+    {
+        id: 2,
+        name: 'Womens Cloptop',
+        image: './assets/products/apparel2.jpg', 
+        price: 'MK 8,000.00',
+        description: 'A sexy designer made cloptop, for women of all seizes and in different colors too',
+        dataProductId: '2'
+    },
+    {
+        id: 3,
+        name: 'Apparel Women Jumper',
+        image: './assets/products/apparel3.jpg', 
+        price: 'MK 10,500.00',
+        description: 'A nice Classic Jumper for women black. Suitable for all occassions and a great mix of clothes mix. With a mix of a heart for a great winter day',
+        dataProductId: '3'
+    },
+    {
+        id: 4,
+        name: 'Exclusive Corn Flakes',
+        image: './assets/slider/slider0.jpg',
+        price: 'MK 25,000.00',
+        description: 'Exclusive offer: Sneakers Exclussively offered at a fair price, with a range of colors and from different brands!',
+        dataProductId: '4'
+    },
+    {
+        id: 5,
+        name: 'Home Leisure Chair',
+        image: './assets/menu/menu_bg4.jpg',
+        price: 'MK 55, 000.00',
+        description: 'Exclusive offer: A feel good leisure chair for the working class to spend their weekends in a bliss!',
+        dataProductId: '5'
+    },
+    {
+        id: 6,
+        name: 'GABRIELLE CHANEL PARIS FRAGRANCE',
+        image: './assets/menu/menu_bg5.jpg',
+        price: 'MK 37, 000.00',
+        description: 'An elegant fragrance for your smell good everyday confident body. original from CHANEL PARIS. Feel laxuarious with us.',
+        dataProductId: '6'
+    }
 ];
 
 export const header = [
@@ -44,19 +83,19 @@ export const contact = [{
 
 export const exclusiveProducts = [
     {
-        id: 1,
+        id: 4,
         name: 'Exclusive Corn Flakes',
-        image: './assets/19-346x310.webp',
-        price: '$8',
-        description: 'Exclusive offer: Corn Flakes at a discounted price!',
-        dataProductId: '1'
+        image: './assets/slider/slider0.jpg',
+        price: 'MK 25,000.00',
+        description: 'Exclusive offer: Sneakers Exclussively offered at a fair price, with a range of colors and from different brands!',
+        dataProductId: '4'
     },
     {
-        id: 2,
-        name: 'Exclusive OROS Drink',
-        image: './assets/checkers515Wx515H.png',
-        price: '$18',
-        description: 'Exclusive offer: OROS Drink at a discounted price!',
+        id: 5,
+        name: 'Home Leisure Chair',
+        image: './assets/menu/menu_bg4.jpg',
+        price: 'MK 55, 000.00',
+        description: 'Exclusive offer: A feel good leisure chair for the working class to spend their weekends in a bliss!',
         dataProductId: '2'
     }
 ];

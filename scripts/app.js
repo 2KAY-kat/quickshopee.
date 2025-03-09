@@ -95,7 +95,7 @@ products.forEach((product) => {
             <div class="product-actions">
                 <button class="bookmark-btn"><i class="fas fa-bookmark"></i></button>
                 <button class="like-btn"><i class="fas fa-heart"></i></button>
-                <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                <button class="details-btn"><i class="fas fa-info-circle"></i></button>
             </div>
         </div>
     `;
@@ -112,7 +112,7 @@ exclusiveProducts.forEach((product) => {
             <div class="product-actions">
                 <button class="bookmark-btn"><i class="fas fa-bookmark"></i></button>
                 <button class="like-btn"><i class="fas fa-heart"></i></button>
-                <button class="details-btn" data-product-id="${product.id}"><i class="fas fa-info-circle"></i> Details</button>
+                <button class="details-btn" data-product-id="${product.id}"><i class="fas fa-info-circle"></i></button>
             </div>
         </div>
     `;
