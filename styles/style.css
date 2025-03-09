@@ -167,11 +167,12 @@ header button:hover {
     position: relative;
     width: 100%;
     height: var(--banner-height);
-    background: url('../assets/images/books-20240711-WA0003.jpg') no-repeat center center/cover;
+    background: url("../assets/banner/procat3.jpg") right no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: left;
+    text-align: left;
+    padding: 1rem;
 }
 
 .banner::before {
@@ -316,7 +317,7 @@ header button:hover {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: var(--card-shadow);
-    text-align: center;
+    text-align: justify;
     max-width: 500px;
     width: 100%;
     color: var(--card-text-color);
