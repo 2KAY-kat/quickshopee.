@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,18 @@
     <title>QuickShopee.</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
-           
+
         </div>
         <div class="search">
-           
+
         </div>
         <div class="hamburger">
             <span></span>
@@ -33,24 +38,70 @@
     </nav>
 
     <div class="banner js-banner">
-       
+
+    </div>
+<!---    slider ------->
+    <div class="container swiper">
+        <div class="slider-wrapper">
+            <div class="card-list swiper-wrapper">
+                <div class="card-item swiper-slide">
+                    <img src="assets/slider/slider0.jpg" alt="slider-img-0" class="slider-product">
+                    <h2 class="slider-img">Sneaker</h2>
+                    <p class="slider-product-brand">ADIDAS</p>
+                    <button class="slider-product-details">View More</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="assets/slider/slider3.jpg" alt="slider-img-0" class="slider-product">
+                    <h2 class="slider-img">Yoga Pants</h2>
+                    <p class="slider-product-brand">YOGA LLC</p>
+                    <button class="slider-product-details">View More</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="assets/slider/slider1.jpg" alt="slider-img-0" class="slider-product">
+                    <h2 class="slider-img">Gucci Dress</h2>
+                    <p class="slider-product-brand">Gucci</p>
+                    <button class="slider-product-details">View More</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="assets/slider/slider2.jpg" alt="slider-img-0" class="slider-product">
+                    <h2 class="slider-img">Furniture</h2>
+                    <p class="slider-product-brand">Kings Furniture</p>
+                    <button class="slider-product-details">View More</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="assets/slider/slider3.jpg" alt="slider-img-0" class="slider-product">
+                    <h2 class="slider-img">Yoga Pants</h2>
+                    <p class="slider-product-brand">YOGA</p>
+                    <button class="slider-product-details">View More</button>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
     </div>
 
     <main>
         <div id="featured-product">
-           
+
         </div>
         <div id="products" data-product-id="">
-           
+
         </div>
         <div id="about" class="about-section">
-           
+
         </div>
         <div id="contacts" class="contact-section">
-           
+
         </div>
         <div id="location">
-           
+
         </div>
     </main>
     <footer>
@@ -59,7 +110,9 @@
 
     <a href="#" id="back-to-top"><i class="fas fa-chevron-up"></i> </a>
 
-    <script src="scripts/general.js"></script>
+    <script type="module" src="scripts/general.js"></script>
     <script type="module" src="scripts/app.js"></script>
+
 </body>
+
 </html>

@@ -634,3 +634,91 @@ header button:hover {
         font-size: 1rem;
     }
 }
+
+/*****************************
+******************************
+        SLIDER
+/*****************************
+*****************************/
+
+.slider-wrapper {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 70px 55px;
+}
+
+.card-list .card-item {
+    color: var(--button-text-color);
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background: var(--button-hover-bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-list .card-item .slider-product {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 3px solid #fff;
+    padding: 4px;
+}
+
+.card-list .card-item .slider-product-brand {
+    font-size: 1.15rem;
+    color: var(--button-bg-color);
+    font-weight: 500;
+    margin: 14px 0 40px;
+}
+
+.card-list .card-item .slider-product-details {
+    font-size: 1.25rem;
+    padding: 10px 35px;
+    color: var(--button-text-color);
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #f4f4f4;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .slider-product-details:hover {
+    border: var(--button-hover-bg-color) transparent;
+    border: 1px solid var(--button-text-color);
+    color: var(--button-hover-bg-color);
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+    background: var(--card-text-color);
+    height: 15px;
+    width: 15px;
+}
+
+.slider-wrapper .swiper-slide-button {
+ color: var(--button-text-color);
+ margin-top: -50px;
+ transition: 0.2s ease;
+} 
+
+.slider-wrapper .swiper-slide-button:hover {
+    color: var(--button-hover-bg-color);
+}
+
+@media (max-width: 768px) {
+    .slider-wrapper {
+        margin: 0 10px 40px;
+    }
+    
+    .slider-wrapper .swiper-slide-button {
+        display: none;
+} 
+}

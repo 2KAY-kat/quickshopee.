@@ -1,3 +1,4 @@
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
 function viewDetails(productId) {
     window.location.href = `product-details.html?productId=${productId}`;
@@ -128,3 +129,36 @@ backToTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+//swiper scripts
+
+const swiper = new Swiper('.slider-wrapper', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 30,
+  
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true 
+    },
+
+    navigation : {
+        nextEl : '.swiper-button-next',
+        prevEl : '.swiper-button-prev'
+    },
+
+    breakpoints : {
+      0 : {
+        slidesPerView : 1
+      },
+      768 : {
+        slidesPerView : 2
+      },
+      1024 : {
+        slidesPerView : 3
+      }
+    }
+  
+  });
